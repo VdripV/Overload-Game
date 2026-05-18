@@ -1,4 +1,1 @@
-res://PlayerCharacter/UI/menu.gd
-res://PlayerCharacter/Camera/camera_script.gd
-res://PlayerCharacter/player_character_scene.tscn
-res://PlayerCharacter/UI/options.gd
+res://Map/Grid_level.tscn
