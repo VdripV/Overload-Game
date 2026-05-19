@@ -181,6 +181,9 @@ func _ready() -> void:
 	
 	build_default_keybinding()
 	input_actions_check()
+	GameManager.player = self
+	GameManager.start_position = global_position
+	add_to_group("player")
 	
 func build_default_keybinding() -> void:
 	#build it in runtime to ensure that export variables have been set
@@ -303,4 +306,14 @@ func tween_model_height(state_model_height : float) -> void:
 	else:
 		model_tween.tween_interval(0.1)
 	model_tween.finished.connect(Callable(model_tween, "kill"))
+	
+signal sprint_state_changed(is_sprinting: bool)
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("sprint"):
+		sprint_state_changed.emit(true)
+	elif event.is_action_released("sprint"):
+		sprint_state_changed.emit(false)
+
+
 		

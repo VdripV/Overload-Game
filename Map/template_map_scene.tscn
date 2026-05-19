@@ -2,12 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://PlayerCharacter/player_character_scene.tscn" id="1_hvhfo"]
 [ext_resource type="Material" uid="uid://cmlreoo2qwhp4" path="res://Arts/structure_material.tres" id="2_ivwfa"]
-[ext_resource type="PackedScene" uid="uid://b84t3rpy4cau8" path="res://Map/MovementModifiers/jumpPads/verticalJumpPad/vertical_jump_pad_scene.tscn" id="4_7e7um"]
 [ext_resource type="Material" uid="uid://3ub3li5nvjsw" path="res://Arts/structure_material_2.tres" id="4_ivwfa"]
-[ext_resource type="PackedScene" uid="uid://djqwgcp3ehij1" path="res://Map/MovementModifiers/slipperyZone/slippery_zone_scene.tscn" id="5_lao78"]
-[ext_resource type="PackedScene" uid="uid://ctf1yf3optph8" path="res://Map/MovementModifiers/gravityZone/gravity_zone_scene.tscn" id="5_y6tot"]
-[ext_resource type="PackedScene" uid="uid://d4gavwq81shmv" path="res://Map/MovementModifiers/conveyorZone/conveyor_zone_scene.tscn" id="7_q4rg5"]
-[ext_resource type="PackedScene" uid="uid://ct3rwravhrwk1" path="res://Map/MovementModifiers/jumpPads/directionalJumpPad/directional_jump_pad_scene.tscn" id="8_q4rg5"]
 [ext_resource type="PackedScene" uid="uid://8wolti2rkt2q" path="res://Map/Spawnable_Weapons/blaster_d.tscn" id="9_43v1x"]
 [ext_resource type="PackedScene" uid="uid://bxwjpayjtdd2g" path="res://Map/Spawnable_Weapons/blaster_k.tscn" id="10_pdlds"]
 [ext_resource type="PackedScene" uid="uid://7m3mdu2x8gld" path="res://Map/Spawnable_Weapons/blaster_n.tscn" id="11_7oo5g"]
@@ -78,13 +73,6 @@ collision_mask = 2
 size = Vector3(17, 1, 41)
 material = ExtResource("2_ivwfa")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Map" unique_id=1856587361]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.252, 2.3, -42.5)
-use_collision = true
-collision_mask = 2
-size = Vector3(7.497, 0.5, 7)
-material = ExtResource("4_ivwfa")
-
 [node name="CSGBox3D8" type="CSGBox3D" parent="Map" unique_id=1354515069]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.189175, 6.2479196, 9.229842)
 use_collision = true
@@ -105,138 +93,6 @@ use_collision = true
 collision_mask = 2
 size = Vector3(9.908728, 0.5, 5.4303284)
 material = ExtResource("4_ivwfa")
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="Map" unique_id=1834846335]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.99679, 1.2844584, -39.5)
-use_collision = true
-collision_mask = 2
-size = Vector3(1, 1.65, 1)
-material = ExtResource("4_ivwfa")
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="Map" unique_id=1350811918]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.99679, 1.2844584, -45.5)
-use_collision = true
-collision_mask = 2
-size = Vector3(1, 1.65, 1)
-material = ExtResource("4_ivwfa")
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="Map" unique_id=1424249069]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.48455, 1.2844584, -45.5)
-use_collision = true
-collision_mask = 2
-size = Vector3(1, 1.65, 1)
-material = ExtResource("4_ivwfa")
-
-[node name="CSGBox3D6" type="CSGBox3D" parent="Map" unique_id=1390302096]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.48455, 1.2606767, -39.5)
-use_collision = true
-collision_mask = 2
-size = Vector3(1, 1.65, 1)
-material = ExtResource("4_ivwfa")
-
-[node name="CSGPolygon1" type="CSGPolygon3D" parent="Map" unique_id=393386434]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3, 3.5, 1.5, 2.5)
-use_collision = true
-collision_mask = 2
-polygon = PackedVector2Array(-6, -1, 3.5, 9, 3.5, -1)
-material = ExtResource("4_ivwfa")
-
-[node name="CSGPolygon5" type="CSGPolygon3D" parent="Map" unique_id=1103894462]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4, 3.5, 1.5, -5.5)
-use_collision = true
-collision_mask = 2
-polygon = PackedVector2Array(-6, -1, -1, 2, 5, -1)
-material = ExtResource("4_ivwfa")
-
-[node name="CSGPolygon6" type="CSGPolygon3D" parent="Map" unique_id=339240]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4, 3.5, 1.5, -29.5)
-use_collision = true
-collision_mask = 2
-polygon = PackedVector2Array(-6, -2, -6, 1, 4, 1)
-material = ExtResource("4_ivwfa")
-
-[node name="CSGPolygon2" type="CSGPolygon3D" parent="Map" unique_id=1873806655]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4, 3.5, 1.5, 11.5)
-use_collision = true
-collision_mask = 2
-polygon = PackedVector2Array(-6, -1, 4, 5, 4, -1)
-material = ExtResource("4_ivwfa")
-
-[node name="CSGPolygon3" type="CSGPolygon3D" parent="Map" unique_id=1068519258]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 6, 3.5, 1.5, 22.5)
-use_collision = true
-collision_mask = 2
-polygon = PackedVector2Array(-6, -1, 11, 5, 11, -1)
-material = ExtResource("4_ivwfa")
-
-[node name="CSGPolygon7" type="CSGPolygon3D" parent="Map" unique_id=1492390792]
-transform = Transform3D(-4.37114e-08, 0, 6, 0, 1, 0, -1, 0, -2.62268e-07, -8.5, -4.49604, 43.9911)
-use_collision = true
-collision_mask = 2
-polygon = PackedVector2Array(-16, -16, 11, 5, 11, 4.9)
-material = ExtResource("4_ivwfa")
-
-[node name="CSGPolygon4" type="CSGPolygon3D" parent="Map" unique_id=1407053070]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4, 7.5, 0.5, 11.5)
-use_collision = true
-collision_mask = 2
-polygon = PackedVector2Array(0, 0, 0, 6, 8, 6, 1, 5)
-material = ExtResource("4_ivwfa")
-
-[node name="CSGSphere3D" type="CSGSphere3D" parent="Map" unique_id=421958061]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.1189, -1.3117, 7.2949)
-use_collision = true
-collision_mask = 2
-radius = 4.0
-radial_segments = 64
-rings = 12
-material = ExtResource("4_ivwfa")
-
-[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Map" unique_id=33381248]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.7101, 1.33529, 26.4086)
-use_collision = true
-collision_mask = 2
-radius = 4.0
-sides = 16
-cone = true
-material = ExtResource("4_ivwfa")
-
-[node name="CSGSphere3D2" type="CSGSphere3D" parent="Map" unique_id=62944951]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.6611, -1.3117, 14.2638)
-use_collision = true
-collision_mask = 2
-radius = 4.6
-radial_segments = 6
-rings = 12
-material = ExtResource("4_ivwfa")
-
-[node name="CSGSphere3D4" type="CSGSphere3D" parent="Map" unique_id=618262318]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.817, 0.174119, 20.8931)
-use_collision = true
-collision_mask = 2
-radius = 4.4
-radial_segments = 32
-rings = 12
-material = ExtResource("4_ivwfa")
-
-[node name="MovementModifiers" type="Node3D" parent="Map" unique_id=432217227]
-
-[node name="VerticalJumpPad" parent="Map/MovementModifiers" unique_id=1026335324 instance=ExtResource("4_7e7um")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.378038, 0.69335794, -62.13657)
-
-[node name="DirectionalJumpPad" parent="Map/MovementModifiers" unique_id=708907076 instance=ExtResource("8_q4rg5")]
-transform = Transform3D(-4.3711385e-08, 0, 0.9999999, 0, 1, 0, -0.9999999, 0, -4.3711385e-08, -15.247266, 1.4057713, -71.279396)
-
-[node name="SlipperyZone" parent="Map/MovementModifiers" unique_id=624434542 instance=ExtResource("5_lao78")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.446507, 1.0000002, -76.42476)
-
-[node name="ConveyorZone" parent="Map/MovementModifiers" unique_id=993640450 instance=ExtResource("7_q4rg5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.437664, 1.0000002, -66.41208)
-texture_scroll_enabled = false
-mesh_instance_path = NodePath("")
-
-[node name="GravityZone" parent="Map/MovementModifiers" unique_id=1367828916 instance=ExtResource("5_y6tot")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.640645, 2.5000005, -64.2022)
 
 [node name="WallrunZone" type="Node3D" parent="Map" unique_id=963747903]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 6, -28)

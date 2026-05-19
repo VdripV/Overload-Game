@@ -19,6 +19,7 @@
 [ext_resource type="Resource" uid="uid://7dhn7807h7x1" path="res://ResourceFiles/blasterD.tres" id="17_m2cla"]
 [ext_resource type="Resource" uid="uid://ci7hm8251osqd" path="res://ResourceFiles/blasterK.tres" id="18_8ke6w"]
 [ext_resource type="StyleBox" uid="uid://c50syhy1a4dmh" path="res://PlayerCharacter/UI/player_character_ui_theme.tres" id="18_ovq28"]
+[ext_resource type="Script" uid="uid://6d820vmb84hy" path="res://PlayerCharacter/speed_lines_container.gd" id="24_s4fyg"]
 [ext_resource type="Script" uid="uid://sca7ypsol83f" path="res://PlayerCharacter/StateMachine/state_machine_script.gd" id="54_e0r17"]
 [ext_resource type="Script" uid="uid://stil4xkf3tk0" path="res://PlayerCharacter/StateMachine/idle_state_script.gd" id="55_dayh2"]
 [ext_resource type="Script" uid="uid://blt7dest23fk0" path="res://PlayerCharacter/StateMachine/walk_state_script.gd" id="56_w3td4"]
@@ -591,13 +592,13 @@ noise = SubResource("FastNoiseLite_jv0i6")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_khex2"]
 shader = ExtResource("14_jv0i6")
 shader_parameter/noise = SubResource("NoiseTexture2D_khex2")
-shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_color = Color(0.82819706, 0.828197, 0.828197, 1)
 shader_parameter/line_count = 2.0
-shader_parameter/line_density = 0.800000038
-shader_parameter/line_faloff = 1.0
-shader_parameter/mask_size = 0.1
-shader_parameter/mask_edge = 0.800000038
-shader_parameter/animation_speed = 20.0
+shader_parameter/line_density = 0.674000032015
+shader_parameter/line_faloff = 0.474000022515
+shader_parameter/mask_size = 0.0
+shader_parameter/mask_edge = 0.8370000397575
+shader_parameter/animation_speed = 16.7950007502625
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w05lp"]
 size = Vector3(2, 0.9491455, 2)
@@ -757,6 +758,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+script = ExtResource("24_s4fyg")
 
 [node name="Crosshair" type="TextureRect" parent="HUD" unique_id=485568366]
 anchors_preset = 8
