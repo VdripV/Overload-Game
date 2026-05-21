@@ -337,6 +337,23 @@ func hit(damage: int) -> void:
 	invincible = true
 	await get_tree().create_timer(invincible_time).timeout
 	invincible = false
+	
+func hit_with_knockback(damage: int, knockbackDirection: Vector3, knockbackForce: float) -> void:
+	if is_dead:
+		return
+	
+	Health -= damage
+	print("Player Health: ", Health)
+	
+	velocity = knockbackDirection.normalized() * knockbackForce
+	
+	if Health <= 0:
+		die()
+		return
+	
+	invincible = true
+	await get_tree().create_timer(invincible_time).timeout
+	invincible = false
 
 func die() -> void:
 	is_dead = true

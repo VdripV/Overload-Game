@@ -1,0 +1,8 @@
+Node3D
+Timer
+CollisionShape3D
+Area3D
+MeshInstance3D
+RigidBody3D
+NavigationAgent3D
+CharacterBody3D

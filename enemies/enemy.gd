@@ -244,7 +244,6 @@ func set_state(new_state: STATE) -> void:
 	
 	current_state = new_state
 	state_timer = 0.0
-	print("Состояние: ", current_state)
 
 func can_see_player() -> bool:
 	var player = get_player()
@@ -260,7 +259,6 @@ func target_in_range() -> bool:
 
 func Hit_Successful(damage: int, _Direction := Vector3.ZERO, _Position := Vector3.ZERO) -> void:
 	Health -= damage
-	print("Target Health: " + str(Health))
 	
 	if current_state == STATE.PATROL or current_state == STATE.INVESTIGATE:
 		var player = get_player()

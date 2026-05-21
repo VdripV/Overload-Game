@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Prot2"
-run/main_scene="uid://d3oc2jw37l0b1"
+run/main_scene="uid://bryybpnpxaik0"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
 [autoload]

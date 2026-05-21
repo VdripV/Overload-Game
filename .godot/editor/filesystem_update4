@@ -1,0 +1,15 @@
+res://SourceFiles/box.tscn
+res://SourceFiles/box.gd
+res://SourceFiles/vfx/scenes/ParticlesManagerScene.tscn
+res://Map/Wallrun.tscn
+res://SourceFiles/vfx/scripts/ParticlesManagerScript.gd
+res://SourceFiles/vfx/scripts/AudioManagerScript.gd
+res://PlayerCharacter/StateMachine/player_character_script.gd
+res://SourceFiles/enemy_bullet.tscn
+res://SourceFiles/enemy_bullet.gd
+res://SourceFiles/flying_enemy.gd
+res://enemies/enemy_bullet.tscn
+res://enemies/flying_enemy.gd
+res://enemies/flying_enemy.tscn
+res://enemies/enemy_bullet.gd
+res://enemies/enemy.gd
