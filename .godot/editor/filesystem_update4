@@ -1,1 +1,2 @@
-res://Map/Grid_level.tscn
+res://PlayerCharacter/player_character_scene.tscn
+res://PlayerCharacter/StateMachine/player_character_script.gd

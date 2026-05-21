@@ -2,6 +2,13 @@ extends CharacterBody3D
 
 class_name PlayerCharacter
 
+# Здоровье игрока
+@export var Health: int = 100
+@export var Max_Health: int = 100
+var is_dead: bool = false
+var invincible: bool = false
+@export var invincible_time: float = 1.0
+
 @export_group("Movement variables")
 var move_speed: float
 var move_accel: float
@@ -178,7 +185,7 @@ func _ready() -> void:
 	time_bef_can_wallrun_again_ref = time_bef_can_wallrun_again
 	walljump_lock_in_air_movement_time_ref = walljump_lock_in_air_movement_time
 	walljump_lock_in_air_movement_time = -1.0
-	
+	add_to_group("Player")
 	build_default_keybinding()
 	input_actions_check()
 	
@@ -304,3 +311,22 @@ func tween_model_height(state_model_height : float) -> void:
 		model_tween.tween_interval(0.1)
 	model_tween.finished.connect(Callable(model_tween, "kill"))
 		
+func hit(damage: int) -> void:
+	if is_dead or invincible:
+		return
+	
+	Health -= damage
+	
+	if Health <= 0:
+		die()
+		return
+	
+	invincible = true
+	await get_tree().create_timer(invincible_time).timeout
+	invincible = false
+
+func die() -> void:
+	is_dead = true
+	remove_from_group("Player")
+	await get_tree().create_timer(1.5).timeout
+	get_tree().reload_current_scene()
