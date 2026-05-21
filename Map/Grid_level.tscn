@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://ck32hxp2ebomj"]
 
 [ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://PlayerCharacter/player_character_scene.tscn" id="2_2p02b"]
-[ext_resource type="MeshLibrary" path="res://blue_finalk.meshlib" id="2_qptbn"]
+[ext_resource type="MeshLibrary" uid="uid://p0x77yfvlp7" path="res://blue_finalk.meshlib" id="2_qptbn"]
 [ext_resource type="PackedScene" uid="uid://b84t3rpy4cau8" path="res://Map/MovementModifiers/jumpPads/verticalJumpPad/vertical_jump_pad_scene.tscn" id="3_2p02b"]
 [ext_resource type="PackedScene" uid="uid://djqwgcp3ehij1" path="res://Map/MovementModifiers/slipperyZone/slippery_zone_scene.tscn" id="4_xhsdk"]
 [ext_resource type="PackedScene" uid="uid://ct3rwravhrwk1" path="res://Map/MovementModifiers/jumpPads/directionalJumpPad/directional_jump_pad_scene.tscn" id="5_8wfg5"]
 [ext_resource type="PackedScene" uid="uid://d4gavwq81shmv" path="res://Map/MovementModifiers/conveyorZone/conveyor_zone_scene.tscn" id="6_35ypq"]
 [ext_resource type="PackedScene" uid="uid://ctf1yf3optph8" path="res://Map/MovementModifiers/gravityZone/gravity_zone_scene.tscn" id="7_ukx34"]
+[ext_resource type="PackedScene" uid="uid://bqgwlh6y8rm1h" path="res://enemies/enemy.tscn" id="8_3eqwe"]
 
 [sub_resource type="Shader" id="Shader_qptbn"]
 code = "shader_type sky;
@@ -232,10 +233,17 @@ adjustment_enabled = true
 [sub_resource type="BoxShape3D" id="BoxShape3D_qptbn"]
 size = Vector3(478, 27, 427)
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_28fbo"]
+vertices = PackedVector3Array(-189.96399, 13.505618, -904.851, -189.96399, 13.505618, -835.851, -168.96399, 13.505618, -835.851, -168.96399, 13.505618, -904.851)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1wtj2"]
+size = Vector3(2.2, 0.1, 7)
+
 [node name="GridLevel" type="Node3D" unique_id=1057001049]
 
 [node name="PlayerCharacter" parent="." unique_id=1479123383 instance=ExtResource("2_2p02b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -117.42277, 13.737959, -699.28174)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -156.87254, 21.7034, -834.7349)
 
 [node name="GridMap" type="GridMap" parent="." unique_id=474468588]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
@@ -388,3 +396,64 @@ transform = Transform3D(-0.7071068, -0.7071068, 0, 0.7071068, -0.7071068, 0, 0, 
 light_energy = 16.0
 light_specular = 16.0
 omni_range = 297.0
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1358213941]
+navigation_mesh = SubResource("NavigationMesh_28fbo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D" unique_id=1655158016]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -179.46399, 12.505618, -870.351)
+mesh = SubResource("BoxMesh_1wtj2")
+
+[node name="PatrolPath1" type="Node3D" parent="NavigationRegion3D" unique_id=110961942]
+
+[node name="Point1" type="Node3D" parent="NavigationRegion3D/PatrolPath1" unique_id=148553083]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -187.78188, 14.568596, -884.83594)
+
+[node name="Point2" type="Node3D" parent="NavigationRegion3D/PatrolPath1" unique_id=1204186538]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -175.59953, 14.607204, -840.58636)
+
+[node name="Point3" type="Node3D" parent="NavigationRegion3D/PatrolPath1" unique_id=2020922810]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -177.18968, 14.236308, -898.48645)
+
+[node name="Point4" type="Node3D" parent="NavigationRegion3D/PatrolPath1" unique_id=1932661981]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -186.4845, 14.574479, -841.37775)
+
+[node name="PatrolPath2" type="Node3D" parent="NavigationRegion3D" unique_id=1682179649]
+
+[node name="Point1" type="Node3D" parent="NavigationRegion3D/PatrolPath2" unique_id=1557201727]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -166.96956, 14.568596, -953.1329)
+
+[node name="Point2" type="Node3D" parent="NavigationRegion3D/PatrolPath2" unique_id=1048588126]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -137.35242, 14.607197, -928.82495)
+
+[node name="Point3" type="Node3D" parent="NavigationRegion3D/PatrolPath2" unique_id=1655792389]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -151.51117, 14.236308, -914.1292)
+
+[node name="Point4" type="Node3D" parent="NavigationRegion3D/PatrolPath2" unique_id=1836865739]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -168.24591, 14.574479, -933.62964)
+
+[node name="PatrolPath3" type="Node3D" parent="NavigationRegion3D" unique_id=1045908868]
+
+[node name="Point1" type="Node3D" parent="NavigationRegion3D/PatrolPath3" unique_id=784171313]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.74059, 14.568596, -955.1879)
+
+[node name="Point2" type="Node3D" parent="NavigationRegion3D/PatrolPath3" unique_id=1292690734]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.04825, 14.607204, -922.163)
+
+[node name="Point3" type="Node3D" parent="NavigationRegion3D/PatrolPath3" unique_id=984446550]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.970352, 14.236308, -934.91833)
+
+[node name="Point4" type="Node3D" parent="NavigationRegion3D/PatrolPath3" unique_id=1118237864]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.090546, 14.574479, -952.11755)
+
+[node name="Enemy" parent="." unique_id=1087826163 node_paths=PackedStringArray("patrol_path") instance=ExtResource("8_3eqwe")]
+transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, -174.02931, 18.062773, -845.02734)
+patrol_path = NodePath("../NavigationRegion3D/PatrolPath1")
+
+[node name="Enemy2" parent="." unique_id=253792577 node_paths=PackedStringArray("patrol_path") instance=ExtResource("8_3eqwe")]
+transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, -165.25371, 18.062773, -942.30414)
+patrol_path = NodePath("../NavigationRegion3D/PatrolPath2")
+
+[node name="Enemy3" parent="." unique_id=1296485706 node_paths=PackedStringArray("patrol_path") instance=ExtResource("8_3eqwe")]
+transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, -80.783936, 18.062773, -919.35535)
+patrol_path = NodePath("../NavigationRegion3D/PatrolPath3")
