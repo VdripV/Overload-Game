@@ -1,8 +1,11 @@
+MeshInstance3D
+CollisionShape3D
+AnimatableBody3D
+StaticBody3D
+GridMap
 Node3D
 Timer
-CollisionShape3D
 Area3D
-MeshInstance3D
 RigidBody3D
 NavigationAgent3D
 CharacterBody3D

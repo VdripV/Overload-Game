@@ -97,14 +97,6 @@ material = ExtResource("4_ivwfa")
 [node name="WallrunZone" type="Node3D" parent="Map" unique_id=963747903]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 6, -28)
 
-[node name="CSGBox3D12" type="CSGBox3D" parent="Map/WallrunZone" unique_id=1749418834]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -16.029999, -1.223, -21.492886)
-use_collision = true
-collision_layer = 5
-collision_mask = 2
-size = Vector3(28.258972, 9.499871, 1)
-material = ExtResource("4_ivwfa")
-
 [node name="CSGBox3D17" type="CSGBox3D" parent="Map/WallrunZone" unique_id=1387270186]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.029999, -1.223, -0.3633995)
 use_collision = true
@@ -146,11 +138,11 @@ size = Vector3(36, 9.499871, 1)
 material = ExtResource("4_ivwfa")
 
 [node name="Path3D" type="Path3D" parent="Map/WallrunZone" unique_id=1415693714]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.468178, -6, -63.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.19818, -6, -63.6)
 curve = SubResource("Curve3D_q4rg5")
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="Map/WallrunZone/Path3D" unique_id=1363574478]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -26.97007, 0, 0)
 use_collision = true
 collision_layer = 5
 collision_mask = 2
@@ -166,6 +158,14 @@ path_local = true
 path_continuous_u = true
 path_u_distance = 1.0
 path_joined = false
+material = ExtResource("4_ivwfa")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="Map/WallrunZone/Path3D/CSGPolygon3D" unique_id=1749418834]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 32.498177, 4.777, -42.107113)
+use_collision = true
+collision_layer = 5
+collision_mask = 2
+size = Vector3(28.258972, 9.499871, 1)
 material = ExtResource("4_ivwfa")
 
 [node name="Path3D2" type="Path3D" parent="Map/WallrunZone" unique_id=880396383]
